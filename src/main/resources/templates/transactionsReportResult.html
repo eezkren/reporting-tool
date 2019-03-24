@@ -3,6 +3,7 @@
 <head>
     <title>Transactions</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link href="../static/css/layout.css" rel="stylesheet" th:href="@{/css/layout.css}"/>
 </head>
 <body>
 <h1>Result</h1>
@@ -20,9 +21,9 @@
         <td colspan="3"> No Reports Available</td>
     </tr>
     <tr th:each="transactions_report : ${transactions_report_result.response}">
-        <td><span th:text="${transactions_report.count}"> Count </span></td>
-        <td><span th:text="${transactions_report.total}"> Total </span></td>
-        <td><span th:text="${transactions_report.currency}"> Currency </span></td>
+        <td th:text="${transactions_report.count}"></td>
+        <td th:text="${transactions_report.total}"></td>
+        <td th:text="${transactions_report.currency}"></td>
     </tr>
     </tbody>
 </table>

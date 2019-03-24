@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transactions</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'Form: ' + ${transactionsReportRequest.fromDate}"/>
+<p th:text="'to: ' + ${transactionsReportRequest.toDate}"/>
+<p th:text="'to: ' + ${transactionsReportRequest.merchant}"/>
+<p th:text="'to: ' + ${transactionsReportRequest.acquirer}"/>
+<a href="/transactions/report">Submit another request</a>
+</body>
+</html>

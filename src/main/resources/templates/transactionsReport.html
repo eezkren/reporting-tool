@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transactions</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>Form</h1>
+
+
+<form action="#" method="post" th:action="@{/transactions/report}" th:object="${transactionsReport}">
+    <p>From: <input required th:field="*{fromDate}" type="date"/></p>
+    <p>To: <input required th:field="*{toDate}" type="date"/></p>
+    <p>merchant: <input th:field="*{merchant}" type="text"/></p>
+    <p>acquirer: <input th:field="*{acquirer}" type="text"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>

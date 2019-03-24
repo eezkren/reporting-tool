@@ -1,6 +1,5 @@
 package com.isilona.reporting.controller;
 
-import com.isilona.reporting.dao.psp.TransactionsReportResponse;
 import com.isilona.reporting.dto.TransactionsReportRequest;
 import com.isilona.reporting.service.TransactionsReportService;
 import com.isilona.reporting.util.ApiMappings;
@@ -10,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.async.DeferredResult;
 
 import javax.validation.Valid;
 
@@ -31,9 +31,9 @@ public class TransactionsController {
     }
 
     @PostMapping("/report")
-    public String greetingSubmit(@Valid TransactionsReportRequest transactionsReportRequest, Model model) {
-        TransactionsReportResponse result = transactionsReportService.getTransactionsReport(transactionsReportRequest);
-        model.addAttribute("transactions_report_result", result);
-        return "transactionsReportResult";
+    public DeferredResult<String> transactionsReportRequestSubmit(@Valid TransactionsReportRequest transactionsReportRequest, Model model) {
+        DeferredResult<String> result = new DeferredResult<>();
+        transactionsReportService.getTransactionsReport(transactionsReportRequest, result, model);
+        return result;
     }
 }

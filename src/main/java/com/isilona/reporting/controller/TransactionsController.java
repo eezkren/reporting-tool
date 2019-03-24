@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,13 +26,14 @@ public class TransactionsController {
 
     @GetMapping("/report")
     public String transactionsReportForm(Model model) {
-        model.addAttribute("transactionsReport", new TransactionsReportRequest());
+        model.addAttribute("transactions_report_request", new TransactionsReportRequest());
         return "transactionsReport";
     }
 
     @PostMapping("/report")
-    public String greetingSubmit(@Valid @ModelAttribute TransactionsReportRequest transactionsReportRequest) {
+    public String greetingSubmit(@Valid TransactionsReportRequest transactionsReportRequest, Model model) {
         TransactionsReportResponse result = transactionsReportService.getTransactionsReport(transactionsReportRequest);
+        model.addAttribute("transactions_report_result", result);
         return "transactionsReportResult";
     }
 }

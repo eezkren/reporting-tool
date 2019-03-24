@@ -8,7 +8,7 @@
 <h1>Form</h1>
 
 
-<form action="#" method="post" th:action="@{/transactions/report}" th:object="${transactionsReport}">
+<form action="#" method="post" th:action="@{/transactions/report}" th:object="${transactions_report_request}">
     <p>From: <input required th:field="*{fromDate}" type="date"/></p>
     <p>To: <input required th:field="*{toDate}" type="date"/></p>
     <p>merchant: <input th:field="*{merchant}" type="text"/></p>

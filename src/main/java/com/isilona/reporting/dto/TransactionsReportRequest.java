@@ -3,7 +3,7 @@ package com.isilona.reporting.dto;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-public class TransactionsReportRequest {
+public class TransactionsReportRequest implements PspRequest{
 
     @NotNull
     private LocalDate fromDate;

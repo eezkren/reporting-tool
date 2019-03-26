@@ -55,7 +55,7 @@ public class TransactionsControllerTest {
             ((DeferredResult) args[1]).setResult("transactionsReportResult");
             ((Model) args[2]).addAttribute("transactions_report_result", response);
             return null; // void method in a block-style lambda, so return null
-        }).when(transactionsReportService).getTransactionsReport(any(), any(), any());
+        }).when(transactionsReportService).getData(any(), any(), any());
 
         MvcResult mvcResult = mockMvc.perform(post("/transactions/report").contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("fromDate", "2018-01-29")

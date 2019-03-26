@@ -33,7 +33,7 @@ public class TransactionsController {
     @PostMapping("/report")
     public DeferredResult<String> transactionsReportRequestSubmit(@Valid TransactionsReportRequest transactionsReportRequest, Model model) {
         DeferredResult<String> result = new DeferredResult<>();
-        transactionsReportService.getTransactionsReport(transactionsReportRequest, result, model);
+        transactionsReportService.getData(transactionsReportRequest, result, model);
         return result;
     }
 }

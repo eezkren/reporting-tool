@@ -33,7 +33,7 @@ public class ClientController {
     @PostMapping
     public DeferredResult<String> clientRequestSubmit(@Valid ClientRequest clientRequest, Model model) {
         DeferredResult<String> result = new DeferredResult<>();
-        clientService.getClient(clientRequest, result, model);
+        clientService.getData(clientRequest, result, model);
         return result;
     }
 }

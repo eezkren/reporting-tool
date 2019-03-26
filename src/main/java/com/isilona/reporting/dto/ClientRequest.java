@@ -2,7 +2,7 @@ package com.isilona.reporting.dto;
 
 import javax.validation.constraints.NotNull;
 
-public class ClientRequest {
+public class ClientRequest implements PspRequest {
 
     @NotNull
     private String transactionId;

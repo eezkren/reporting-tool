@@ -1,4 +1,6 @@
-package com.isilona.reporting.dao.psp;
+package com.isilona.reporting.dao.psp.response;
+
+import com.isilona.reporting.dao.psp.TransactionsReport;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.isilona.reporting.service;
 
-import com.isilona.reporting.dao.psp.ClientResponse;
+import com.isilona.reporting.dao.psp.response.ClientResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;

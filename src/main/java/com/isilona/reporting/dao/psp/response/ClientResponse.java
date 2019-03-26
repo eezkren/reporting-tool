@@ -1,4 +1,6 @@
-package com.isilona.reporting.dao.psp;
+package com.isilona.reporting.dao.psp.response;
+
+import com.isilona.reporting.dao.psp.CustomerInfo;
 
 public class ClientResponse {
 

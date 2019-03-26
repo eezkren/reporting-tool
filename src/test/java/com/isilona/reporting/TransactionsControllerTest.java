@@ -1,7 +1,7 @@
 package com.isilona.reporting;
 
 import com.isilona.reporting.dao.psp.TransactionsReport;
-import com.isilona.reporting.dao.psp.TransactionsReportResponse;
+import com.isilona.reporting.dao.psp.response.TransactionsReportResponse;
 import com.isilona.reporting.dto.TransactionsReportRequest;
 import com.isilona.reporting.service.TransactionsReportService;
 import org.junit.Test;

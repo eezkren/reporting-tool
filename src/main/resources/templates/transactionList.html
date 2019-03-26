@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TransactionList</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>TransactionList Search</h1>
+
+
+<form action="#" method="post" th:action="@{/transaction/list}" th:object="${transaction_list_request}">
+    <p>fromDate: <input th:field="*{fromDate}" type="date"/></p>
+    <p>toDate: <input th:field="*{toDate}" type="date"/></p>
+    <p>status: <input th:field="*{status}" type="text"/></p>
+    <p>operation: <input th:field="*{operation}" type="text"/></p>
+    <p>merchantId: <input min="0" th:field="*{merchantId}" type="number"/></p>
+    <p>acquirerId: <input min="0" th:field="*{acquirerId}" type="number"/></p>
+    <p>paymentMethod: <input th:field="*{paymentMethod}" type="text"/></p>
+    <p>errorCode: <input th:field="*{errorCode}" type="text"/></p>
+    <p>filterField: <input th:field="*{filterField}" type="text"/></p>
+    <p>filterValue: <input th:field="*{filterValue}" type="text"/></p>
+    <p>page: <input min="0" th:field="*{page}" type="number"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>

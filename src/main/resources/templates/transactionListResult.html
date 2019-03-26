@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>TransactionList</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <link href="../static/css/layout.css" rel="stylesheet" th:href="@{/css/layout.css}"/>
+</head>
+<body>
+<h1>TransactionList Result</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th colspan="2" rowspan="2">customerInfo</th>
+        <th colspan="2">fx</th>
+        <th colspan="2">transaction</th>
+        <th rowspan="2">merchant</th>
+    </tr>
+    <tr>
+        <th colspan="2">Merchant</th>
+        <th colspan="2">Merchant</th>
+    </tr>
+    <tr>
+        <th>email</th>
+        <th>billingFirstName</th>
+        <th>originalAmount</th>
+        <th>originalCurrency</th>
+        <th>referenceNo</th>
+        <th>status</th>
+        <th>name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${transaction_list_result.data.size() == 0}">
+        <td colspan="7"> No Clients Available</td>
+    </tr>
+    <tr th:unless="${transaction_list_result.data.size() == 0}" th:each="transaction_list_data : ${transaction_list_result.data}" >
+
+        <td th:text="${transaction_list_data.customerInfo.email}"></td>
+        <td th:text="${transaction_list_data.customerInfo.billingFirstName}"></td>
+
+        <td th:text="${transaction_list_data.fx.merchant.originalAmount}"></td>
+        <td th:text="${transaction_list_data.fx.merchant.originalCurrency}"></td>
+
+        <td th:text="${transaction_list_data.transaction.merchant.referenceNo}"></td>
+        <td th:text="${transaction_list_data.transaction.merchant.status}"></td>
+
+        <td th:text="${transaction_list_data.merchant.name}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+<a href="/transaction">Submit another transaction search</a>
+</body>
+</html>

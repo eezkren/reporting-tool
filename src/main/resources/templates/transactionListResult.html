@@ -14,7 +14,10 @@
         <th colspan="2" rowspan="2">customerInfo</th>
         <th colspan="2">fx</th>
         <th colspan="2">transaction</th>
+        <th colspan="2" rowspan="2">acquirer</th>
         <th rowspan="2">merchant</th>
+        <th rowspan="3">refundable</th>
+        <th rowspan="3">ipn sent</th>
     </tr>
     <tr>
         <th colspan="2">Merchant</th>
@@ -27,6 +30,8 @@
         <th>originalCurrency</th>
         <th>referenceNo</th>
         <th>status</th>
+        <th>id</th>
+        <th>name</th>
         <th>name</th>
     </tr>
     </thead>
@@ -34,18 +39,26 @@
     <tr th:if="${transaction_list_result.data.size() == 0}">
         <td colspan="7"> No Clients Available</td>
     </tr>
-    <tr th:unless="${transaction_list_result.data.size() == 0}" th:each="transaction_list_data : ${transaction_list_result.data}" >
+    <tr th:each="transaction_list_data : ${transaction_list_result.data}"
+        th:unless="${transaction_list_result.data.size() == 0}">
 
-        <td th:text="${transaction_list_data.customerInfo.email}"></td>
-        <td th:text="${transaction_list_data.customerInfo.billingFirstName}"></td>
+        <td th:text="${transaction_list_data.customerInfo?.email}"></td>
+        <td th:text="${transaction_list_data.customerInfo?.billingFirstName}"></td>
 
-        <td th:text="${transaction_list_data.fx.merchant.originalAmount}"></td>
-        <td th:text="${transaction_list_data.fx.merchant.originalCurrency}"></td>
+        <td th:text="${transaction_list_data.fx?.merchant?.originalAmount}"></td>
+        <td th:text="${transaction_list_data.fx?.merchant?.originalCurrency}"></td>
 
-        <td th:text="${transaction_list_data.transaction.merchant.referenceNo}"></td>
-        <td th:text="${transaction_list_data.transaction.merchant.status}"></td>
+        <td th:text="${transaction_list_data.transaction?.merchant?.referenceNo}"></td>
+        <td th:text="${transaction_list_data.transaction?.merchant?.status}"></td>
 
-        <td th:text="${transaction_list_data.merchant.name}"></td>
+        <td th:text="${transaction_list_data.acquirer?.id}"></td>
+        <td th:text="${transaction_list_data.acquirer?.name}"></td>
+
+        <td th:text="${transaction_list_data.merchant?.name}"></td>
+
+        <td th:text="${transaction_list_data.refundable}"></td>
+
+        <td th:text="${transaction_list_data.ipn?.sent}"></td>
 
     </tr>
     </tbody>

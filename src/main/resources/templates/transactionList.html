@@ -11,13 +11,60 @@
 <form action="#" method="post" th:action="@{/transaction/list}" th:object="${transaction_list_request}">
     <p>fromDate: <input th:field="*{fromDate}" type="date"/></p>
     <p>toDate: <input th:field="*{toDate}" type="date"/></p>
-    <p>status: <input th:field="*{status}" type="text"/></p>
-    <p>operation: <input th:field="*{operation}" type="text"/></p>
+
+    <p>status:
+        <select th:field="*{status}">
+            <option th:value="${null}">Select Status</option>
+            <option th:each="status : ${T(com.isilona.reporting.dto.Status).values()}"
+                    th:text="${status.displayName}"
+                    th:value="${status.displayName}">
+            </option>
+        </select>
+    </p>
+
+    <p>operation:
+        <select th:field="*{operation}">
+            <option th:value="${null}">Select Operation</option>
+            <option th:each="operation : ${T(com.isilona.reporting.dto.Operation).values()}"
+                    th:text="${operation.displayName}"
+                    th:value="${operation.displayName}">
+            </option>
+        </select>
+    </p>
+
     <p>merchantId: <input min="0" th:field="*{merchantId}" type="number"/></p>
     <p>acquirerId: <input min="0" th:field="*{acquirerId}" type="number"/></p>
-    <p>paymentMethod: <input th:field="*{paymentMethod}" type="text"/></p>
-    <p>errorCode: <input th:field="*{errorCode}" type="text"/></p>
-    <p>filterField: <input th:field="*{filterField}" type="text"/></p>
+
+    <p>paymentMethod:
+        <select th:field="*{paymentMethod}">
+            <option th:value="${null}">Select PaymentMethod</option>
+            <option th:each="paymentMethod : ${T(com.isilona.reporting.dto.PaymentMethod).values()}"
+                    th:text="${paymentMethod.displayName}"
+                    th:value="${paymentMethod.displayName}">
+            </option>
+        </select>
+    </p>
+
+    <p>errorCode:
+        <select th:field="*{errorCode}">
+            <option th:value="${null}">Select ErrorCode</option>
+            <option th:each="errorCode : ${T(com.isilona.reporting.dto.ErrorCode).values()}"
+                    th:text="${errorCode.displayName}"
+                    th:value="${errorCode.displayName}">
+            </option>
+        </select>
+    </p>
+
+    <p>filterField:
+        <select th:field="*{filterField}">
+            <option th:value="${null}">Select FilterField</option>
+            <option th:each="filterField : ${T(com.isilona.reporting.dto.FilterField).values()}"
+                    th:text="${filterField.displayName}"
+                    th:value="${filterField.displayName}">
+            </option>
+        </select>
+    </p>
+
     <p>filterValue: <input th:field="*{filterValue}" type="text"/></p>
     <p>page: <input min="0" th:field="*{page}" type="number"/></p>
     <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>

@@ -1,19 +1,68 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Transactions</title>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>PSPReporting</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
 </head>
 <body>
-<h1>TransactionsReport Search</h1>
+
+<div th:replace="fragments/header :: header"/>
+
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">TransactionsReport Search</h1>
 
 
-<form action="#" method="post" th:action="@{/transactions/report}" th:object="${transactions_report_request}">
-    <p>From: <input required th:field="*{fromDate}" type="date"/></p>
-    <p>To: <input required th:field="*{toDate}" type="date"/></p>
-    <p>merchant: <input th:field="*{merchant}" type="text"/></p>
-    <p>acquirer: <input th:field="*{acquirer}" type="text"/></p>
-    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
-</form>
+            <form action="#" method="post" th:action="@{/transactions/report}"
+                  th:object="${transactions_report_request}">
+                <div class="form-group">
+                    <label for="fromDate">From</label>
+                    <input class="form-control" id="fromDate"
+                           placeholder="Enter date"
+                           required
+                           th:field="*{fromDate}"
+                           type="date">
+                </div>
+
+                <div class="form-group">
+                    <label for="toDate">To</label>
+                    <input class="form-control" id="toDate"
+                           placeholder="Enter date"
+                           required
+                           th:field="*{toDate}"
+                           type="date">
+                </div>
+
+                <div class="form-group">
+                    <label for="merchant">Merchant</label>
+                    <input class="form-control" id="merchant"
+                           placeholder="Enter merchant id"
+                           th:field="*{merchant}"
+                           type="text">
+                </div>
+
+                <div class="form-group">
+                    <label for="acquirer">Acquirer</label>
+                    <input class="form-control" id="acquirer"
+                           placeholder="Enter acquirer id"
+                           th:field="*{acquirer}"
+                           type="text">
+                </div>
+
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-secondary" type="reset">Reset</button>
+            </form>
+
+        </div>
+    </div>
+
+</main>
+
+<div th:replace="fragments/footer :: footer"/>
+
 </body>
 </html>

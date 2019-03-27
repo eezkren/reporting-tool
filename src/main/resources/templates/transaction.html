@@ -1,16 +1,43 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Transaction</title>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>PSPReporting</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
 </head>
 <body>
-<h1>Transaction Search</h1>
+
+<div th:replace="fragments/header :: header"/>
+
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Transaction Search</h1>
 
 
-<form action="#" method="post" th:action="@{/transaction}" th:object="${transaction_request}">
-    <p>From: <input required th:field="*{transactionId}" type="text"/></p>
-    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
-</form>
+            <form action="#" method="post" th:action="@{/transaction}" th:object="${transaction_request}">
+
+                <div class="form-group">
+                    <label for="transactionId">Transaction</label>
+                    <input class="form-control" id="transactionId"
+                           placeholder="Enter transaction Id"
+                           required
+                           th:field="*{transactionId}"
+                           type="text">
+                </div>
+
+
+                <button class="btn btn-primary" type="submit">Submit</button>
+                <button class="btn btn-secondary" type="reset">Reset</button>
+            </form>
+
+        </div>
+    </div>
+
+</main>
+
+<div th:replace="fragments/footer :: footer"/>
+
 </body>
 </html>

@@ -1,56 +1,71 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Transaction</title>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <link href="../static/css/layout.css" rel="stylesheet" th:href="@{/css/layout.css}"/>
+    <title>PSPReporting</title>
+
+    <div th:replace="fragments/header :: header-css"/>
+
 </head>
 <body>
-<h1>Transaction Result</h1>
 
-<table>
-    <thead>
-    <tr>
-        <th colspan="2" rowspan="2">customerInfo</th>
-        <th colspan="2">fx</th>
-        <th colspan="2">transaction</th>
-        <th rowspan="2">merchant</th>
-    </tr>
-    <tr>
-        <th colspan="2">Merchant</th>
-        <th colspan="2">Merchant</th>
-    </tr>
-    <tr>
-        <th>email</th>
-        <th>billingFirstName</th>
-        <th>originalAmount</th>
-        <th>originalCurrency</th>
-        <th>referenceNo</th>
-        <th>status</th>
-        <th>name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:if="${transaction_result.customerInfo == null}">
-        <td colspan="7"> No Clients Available</td>
-    </tr>
-    <tr th:unless="${transaction_result.customerInfo == null}">
+<div th:replace="fragments/header :: header"/>
 
-        <td th:text="${transaction_result.customerInfo.email}"></td>
-        <td th:text="${transaction_result.customerInfo.billingFirstName}"></td>
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Transaction Result</h1>
 
-        <td th:text="${transaction_result.fx.merchant.originalAmount}"></td>
-        <td th:text="${transaction_result.fx.merchant.originalCurrency}"></td>
 
-        <td th:text="${transaction_result.transaction.merchant.referenceNo}"></td>
-        <td th:text="${transaction_result.transaction.merchant.status}"></td>
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th colspan="2" rowspan="2">customerInfo</th>
+                    <th colspan="2">fx</th>
+                    <th colspan="2">transaction</th>
+                    <th rowspan="2">merchant</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Merchant</th>
+                    <th colspan="2">Merchant</th>
+                </tr>
+                <tr>
+                    <th>email</th>
+                    <th>billingFirstName</th>
+                    <th>originalAmount</th>
+                    <th>originalCurrency</th>
+                    <th>referenceNo</th>
+                    <th>status</th>
+                    <th>name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${transaction_result.customerInfo == null}">
+                    <td colspan="7"> No transaction info available</td>
+                </tr>
+                <tr th:unless="${transaction_result.customerInfo == null}">
 
-        <td th:text="${transaction_result.merchant.name}"></td>
+                    <td th:text="${transaction_result.customerInfo.email}"></td>
+                    <td th:text="${transaction_result.customerInfo.billingFirstName}"></td>
 
-    </tr>
-    </tbody>
-</table>
+                    <td th:text="${transaction_result.fx.merchant.originalAmount}"></td>
+                    <td th:text="${transaction_result.fx.merchant.originalCurrency}"></td>
 
-<a href="/transaction">Submit another transaction search</a>
+                    <td th:text="${transaction_result.transaction.merchant.referenceNo}"></td>
+                    <td th:text="${transaction_result.transaction.merchant.status}"></td>
+
+                    <td th:text="${transaction_result.merchant.name}"></td>
+
+                </tr>
+                </tbody>
+            </table>
+
+            <a class="btn btn-primary" href="/transaction" role="button">Back</a>
+        </div>
+    </div>
+
+</main>
+
+<div th:replace="fragments/footer :: footer"/>
+
 </body>
 </html>

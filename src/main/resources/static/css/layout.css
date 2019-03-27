@@ -1,5 +1,7 @@
-table td, th {
-    vertical-align: top;
-    border: solid 1px #888;
-    padding: 10px;
+.table thead th {
+    vertical-align: middle;
+    text-align: center;
+}
+body {
+    padding-top: 3.5rem;
 }

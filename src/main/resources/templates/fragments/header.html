@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:fragment="header-css">
+        <!-- this is header-css -->
+        <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+              type="text/css"/>
+
+        <link href="/static/css/layout.css" rel="stylesheet" th:href="@{/css/layout.css}"/>
+    </div>
+</head>
+<body>
+<div th:fragment="header">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/transactions/report">Transactions Report</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/transaction/list">Transaction List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/transaction">Transaction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/client">Client</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+</body>
+</html>

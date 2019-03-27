@@ -6,9 +6,12 @@ import com.isilona.reporting.service.TransactionListService;
 import com.isilona.reporting.service.TransactionService;
 import com.isilona.reporting.util.ApiMappings;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.async.DeferredResult;
@@ -53,5 +56,10 @@ public class TransactionController {
         DeferredResult<String> result = new DeferredResult<>();
         transactionListService.getData(transactionListRequest, result, model);
         return result;
+    }
+
+    @InitBinder
+    public void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
     }
 }

@@ -11,7 +11,7 @@
     <groupId>com.isilona</groupId>
     <artifactId>reporting</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>reporting</name>
+    <name>reporting-demo</name>
     <description>reporting project</description>
 
     <properties>

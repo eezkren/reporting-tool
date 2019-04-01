@@ -1,19 +1,14 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>PSPReporting</title>
-
-    <div th:replace="fragments/header :: header-css"/>
-
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="fragments/head"></th:block>
 <body>
 
-<div th:replace="fragments/header :: header"/>
+<div th:replace="fragments/header :: header"></div>
 
 <main role="main">
     <div class="jumbotron">
         <div class="container">
-            <h1 class="display-3">TransactionsReport Search</h1>
+            <h1 class="display-3">TransactionList Search</h1>
 
 
             <form action="#" method="post" th:action="@{/transaction/list}" th:object="${transaction_list_request}">
@@ -126,7 +121,7 @@
 
 </main>
 
-<div th:replace="fragments/footer :: footer"/>
+<div th:replace="fragments/footer :: footer"></div>
 
 </body>
 </html>

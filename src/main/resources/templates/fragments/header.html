@@ -1,5 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<th:block>
     <div th:fragment="header-css">
         <!-- this is header-css -->
         <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
@@ -7,9 +7,10 @@
 
         <link href="/static/css/layout.css" rel="stylesheet" th:href="@{/css/layout.css}"/>
     </div>
-</head>
-<body>
-<div th:fragment="header">
+</th:block>
+
+
+<th:block th:fragment="header">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
@@ -28,7 +29,6 @@
             </ul>
         </div>
     </nav>
-</div>
+</th:block>
 
-</body>
 </html>

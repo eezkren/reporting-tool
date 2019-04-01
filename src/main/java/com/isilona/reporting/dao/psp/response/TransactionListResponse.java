@@ -1,49 +1,54 @@
 package com.isilona.reporting.dao.psp.response;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.isilona.reporting.dao.psp.TransactionData;
 
 import java.util.List;
 
 public class TransactionListResponse {
 
-    private Integer per_page;
-    private Integer current_page;
-    private String next_page_url;
-    private String prev_page_url;
+    @JsonProperty("per_page")
+    private Integer perPage;
+    @JsonProperty("current_page")
+    private Integer currentPage;
+    @JsonProperty("next_page_url")
+    private String nextPageUrl;
+    @JsonProperty("prev_page_url")
+    private String prevPageUrl;
     private Integer from;
     private Integer to;
     private List<TransactionData> data;
 
-    public Integer getPer_page() {
-        return per_page;
+    public Integer getPerPage() {
+        return perPage;
     }
 
-    public void setPer_page(Integer per_page) {
-        this.per_page = per_page;
+    public void setPerPage(Integer perPage) {
+        this.perPage = perPage;
     }
 
-    public Integer getCurrent_page() {
-        return current_page;
+    public Integer getCurrentPage() {
+        return currentPage;
     }
 
-    public void setCurrent_page(Integer current_page) {
-        this.current_page = current_page;
+    public void setCurrentPage(Integer currentPage) {
+        this.currentPage = currentPage;
     }
 
-    public String getNext_page_url() {
-        return next_page_url;
+    public String getNextPageUrl() {
+        return nextPageUrl;
     }
 
-    public void setNext_page_url(String next_page_url) {
-        this.next_page_url = next_page_url;
+    public void setNextPageUrl(String nextPageUrl) {
+        this.nextPageUrl = nextPageUrl;
     }
 
-    public String getPrev_page_url() {
-        return prev_page_url;
+    public String getPrevPageUrl() {
+        return prevPageUrl;
     }
 
-    public void setPrev_page_url(String prev_page_url) {
-        this.prev_page_url = prev_page_url;
+    public void setPrevPageUrl(String prevPageUrl) {
+        this.prevPageUrl = prevPageUrl;
     }
 
     public Integer getFrom() {

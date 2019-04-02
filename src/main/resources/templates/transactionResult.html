@@ -43,11 +43,11 @@
                     <td th:text="${transaction_result.customerInfo.email}"></td>
                     <td th:text="${transaction_result.customerInfo.billingFirstName}"></td>
 
-                    <td th:text="${transaction_result.fx.merchant.originalAmount}"></td>
-                    <td th:text="${transaction_result.fx.merchant.originalCurrency}"></td>
+                    <td th:text="${transaction_result.fx?.merchant?.originalAmount}"></td>
+                    <td th:text="${transaction_result.fx?.merchant?.originalCurrency}"></td>
 
-                    <td th:text="${transaction_result.transaction.merchant.referenceNo}"></td>
-                    <td th:text="${transaction_result.transaction.merchant.status}"></td>
+                    <td th:text="${transaction_result.transaction?.merchant?.referenceNo}"></td>
+                    <td th:text="${transaction_result.transaction?.merchant?.status}"></td>
 
                     <td th:text="${transaction_result.merchant.name}"></td>
 

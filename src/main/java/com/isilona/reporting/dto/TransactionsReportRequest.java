@@ -3,14 +3,14 @@ package com.isilona.reporting.dto;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
-public class TransactionsReportRequest implements PspRequest{
+public class TransactionsReportRequest implements PspRequest {
 
     @NotNull
     private LocalDate fromDate;
     @NotNull
     private LocalDate toDate;
-    private Integer merchant;
-    private Integer acquirer;
+    private Integer merchantId;
+    private Integer acquirerId;
 
     public LocalDate getFromDate() {
         return fromDate;
@@ -28,19 +28,19 @@ public class TransactionsReportRequest implements PspRequest{
         this.toDate = toDate;
     }
 
-    public Integer getMerchant() {
-        return merchant;
+    public Integer getMerchantId() {
+        return merchantId;
     }
 
-    public void setMerchant(Integer merchant) {
-        this.merchant = merchant;
+    public void setMerchantId(Integer merchantId) {
+        this.merchantId = merchantId;
     }
 
-    public Integer getAcquirer() {
-        return acquirer;
+    public Integer getAcquirerId() {
+        return acquirerId;
     }
 
-    public void setAcquirer(Integer acquirer) {
-        this.acquirer = acquirer;
+    public void setAcquirerId(Integer acquirerId) {
+        this.acquirerId = acquirerId;
     }
 }

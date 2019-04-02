@@ -82,8 +82,8 @@ public class TransactionsControllerTest {
                         allOf(
                                 hasProperty("fromDate", nullValue()),
                                 hasProperty("toDate", nullValue()),
-                                hasProperty("merchant", nullValue()),
-                                hasProperty("acquirer", nullValue())
+                                hasProperty("merchantId", nullValue()),
+                                hasProperty("acquirerId", nullValue())
                         )
                 ));
     }

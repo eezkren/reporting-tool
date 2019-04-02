@@ -9,6 +9,11 @@ public class TransactionsReportResponse {
     private String status;
     private List<TransactionsReport> response;
 
+    private String code;
+
+    private String message;
+
+
     public String getStatus() {
         return status;
     }
@@ -23,5 +28,21 @@ public class TransactionsReportResponse {
 
     public void setResponse(List<TransactionsReport> response) {
         this.response = response;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

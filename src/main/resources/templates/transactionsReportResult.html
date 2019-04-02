@@ -11,8 +11,10 @@
         <div class="container">
             <h1 class="display-3">TransactionsReport Result</h1>
 
+            <h1 class="display-5" th:if="${transactions_report_result.status == 'DECLINED'}"
+                th:text="${transactions_report_result.message}"></h1>
 
-            <table class="table table-hover table-bordered">
+            <table class="table table-hover table-bordered" th:if="${transactions_report_result.status == 'APPROVED'}">
                 <thead>
                 <tr>
                     <th>Count</th>
